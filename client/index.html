@@ -16,21 +16,71 @@
 
 <body>
 
-    <main class="container">
+<div class="app">
+
+    <!-- Header -->
+
+    <header class="header">
 
         <h1>🎮 Stream Companion</h1>
 
-        <p id="status">
+        <div class="connection">
 
-            Connecting...
+            <span class="live-dot"></span>
 
-        </p>
+            <span id="status">Connecting...</span>
 
-    </main>
+        </div>
 
-    <script src="/socket.io/socket.io.js"></script>
+    </header>
 
-    <script src="/js/app.js"></script>
+    <!-- Viewer Card -->
+
+    <section class="card">
+
+        <h2>👥 Viewers</h2>
+
+        <p>Total Viewers</p>
+
+        <h3>--</h3>
+
+    </section>
+
+    <!-- Chat Card -->
+
+    <section class="card">
+
+        <h2>💬 Live Chat</h2>
+
+        <p>Waiting for messages...</p>
+
+    </section>
+
+    <!-- Alerts -->
+
+    <section class="card">
+
+        <h2>❤️ Alerts</h2>
+
+        <p>No alerts</p>
+
+    </section>
+
+    <!-- OBS -->
+
+    <section class="card">
+
+        <h2>🎬 OBS</h2>
+
+        <p>Waiting for OBS...</p>
+
+    </section>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="/js/app.js"></script>
 
 </body>
 

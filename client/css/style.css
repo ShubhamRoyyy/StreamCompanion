@@ -16,30 +16,92 @@ body{
 
     justify-content:center;
 
-    align-items:center;
-
-    height:100vh;
+    padding:20px;
 
 }
 
-.container{
+.app{
+
+    width:100%;
+
+    max-width:430px;
+
+}
+
+.header{
 
     text-align:center;
-
-}
-
-h1{
-
-    font-size:48px;
 
     margin-bottom:20px;
 
 }
 
-#status{
+.header h1{
+
+    font-size:32px;
+
+    margin-bottom:12px;
+
+}
+
+.connection{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
 
     color:#22c55e;
 
-    font-size:24px;
+    font-weight:bold;
+
+}
+
+.live-dot{
+
+    width:10px;
+
+    height:10px;
+
+    background:#ef4444;
+
+    border-radius:50%;
+
+}
+
+.card{
+
+    background:#1F2937;
+
+    border:1px solid #374151;
+
+    border-radius:16px;
+
+    padding:18px;
+
+    margin-bottom:16px;
+
+}
+
+.card h2{
+
+    margin-bottom:12px;
+
+    font-size:20px;
+
+}
+
+.card p{
+
+    color:#9CA3AF;
+
+}
+
+.card h3{
+
+    margin-top:10px;
+
+    font-size:34px;
 
 }
