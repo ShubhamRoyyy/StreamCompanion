@@ -8,6 +8,8 @@ const express = require("express");
 const http = require("http");
 const path = require("path");
 const { Server } = require("socket.io");
+const { connectOBS } = require("./obs/obs");
+const { getScenes } = require("./obs/sceneManager");
 
 const app = express();
 
@@ -31,15 +33,23 @@ Socket.IO
 ==========================================================
 */
 
-io.on("connection", (socket) => {
+io.on("connection", async (socket) => {
 
     console.log("✅ Client Connected");
 
     socket.emit("welcome", {
-
         message: "Connected Successfully"
-
     });
+
+    /*
+    ==========================================================
+    Send OBS Scenes
+    ==========================================================
+    */
+
+    const scenes = await getScenes();
+
+    socket.emit("obs-scenes", scenes);
 
     socket.on("disconnect", () => {
 
@@ -55,8 +65,10 @@ Start Server
 ==========================================================
 */
 
-server.listen(PORT, () => {
+server.listen(PORT, async () => {
 
     console.log(`🚀 Server running at http://localhost:${PORT}`);
+
+    await connectOBS();
 
 });

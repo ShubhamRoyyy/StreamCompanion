@@ -7,7 +7,29 @@ OBS Panel Component
 class ObsPanel extends HTMLElement {
 
     connectedCallback() {
+
         this.render();
+
+        this.initializeAccordion();
+
+    }
+
+    initializeAccordion() {
+
+        const headers = this.querySelectorAll(".obs-section-header");
+
+        headers.forEach(header => {
+
+            header.addEventListener("click", () => {
+
+                const section = header.parentElement;
+
+                section.classList.toggle("open");
+
+            });
+
+        });
+
     }
 
     render() {
@@ -16,75 +38,111 @@ class ObsPanel extends HTMLElement {
 
             <section class="obs-card">
 
-                <div class="obs-header">
+                <h2 class="card-title">
+                    🖥️ OBS Controls
+                </h2>
 
-                    <h2 class="card-title">
-                        🖥️ OBS Controls
-                    </h2>
+                <!-- Scenes -->
+
+                <div class="obs-section">
+
+                    <div class="obs-section-header">
+
+                        <div>
+
+                            <span class="obs-arrow">▶</span>
+
+                            🎬 Scenes
+
+                        </div>
+
+                        <span
+                            id="scene-count"
+                            class="obs-count">
+
+                            0 Scenes
+
+                        </span>
+
+                    </div>
+
+                    <div
+                        id="scene-list"
+                        class="obs-content">
+
+                        Waiting for OBS...
+
+                    </div>
 
                 </div>
 
-                <details class="obs-section">
+                <!-- Sources -->
 
-                    <summary>
+                <div class="obs-section">
 
-                        <span>🎬 Scenes</span>
+                    <div class="obs-section-header">
 
-                        <span class="obs-count">
-                            0 Scenes
-                        </span>
+                        <div>
 
-                    </summary>
+                            <span class="obs-arrow">▶</span>
 
-                    <div class="obs-content" id="scene-list">
+                            📦 Sources
 
-                        Waiting for OBS...
+                        </div>
 
-                    </div>
+                        <span
+                            id="source-count"
+                            class="obs-count">
 
-                </details>
-
-                <details class="obs-section">
-
-                    <summary>
-
-                        <span>📦 Sources</span>
-
-                        <span class="obs-count">
                             0 Sources
+
                         </span>
 
-                    </summary>
+                    </div>
 
-                    <div class="obs-content" id="source-list">
+                    <div
+                        id="source-list"
+                        class="obs-content">
 
                         Waiting for OBS...
 
                     </div>
 
-                </details>
+                </div>
 
-                <details class="obs-section">
+                <!-- Audio -->
 
-                    <summary>
+                <div class="obs-section">
 
-                        <span>🎤 Audio</span>
+                    <div class="obs-section-header">
 
-                    </summary>
+                        <div>
+
+                            <span class="obs-arrow">▶</span>
+
+                            🎤 Audio
+
+                        </div>
+
+                    </div>
 
                     <div class="obs-content">
 
                         <button class="obs-button">
+
                             🎤 Mic
+
                         </button>
 
                         <button class="obs-button">
+
                             🔊 Desktop Audio
+
                         </button>
 
                     </div>
 
-                </details>
+                </div>
 
             </section>
 
