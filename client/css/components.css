@@ -94,3 +94,463 @@
     color: white;
 
 }
+
+/* ==========================================================
+   STATS PANEL
+========================================================== */
+
+.stats-card {
+
+    background: #1f2937;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    margin-bottom: var(--space-5);
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+
+}
+
+/* ==========================================================
+   CARD TITLE
+========================================================== */
+
+.card-title {
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+    color: var(--text-primary);
+
+}
+
+/* ==========================================================
+   STATS GRID
+========================================================== */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+
+}
+
+/* ==========================================================
+   STAT BOX
+========================================================== */
+
+.stat-box {
+
+    background: #111827;
+
+    border-radius: 14px;
+
+    padding: 18px 12px;
+
+    text-align: center;
+
+    transition: .25s ease;
+
+}
+
+.stat-box:hover {
+
+    transform: translateY(-2px);
+
+}
+
+/* ==========================================================
+   LABEL
+========================================================== */
+
+.stat-label {
+
+    font-size: .95rem;
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+
+    color: var(--text-secondary);
+
+}
+
+/* ==========================================================
+   VALUE
+========================================================== */
+
+.stat-value {
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    color: white;
+
+}
+
+/* ==========================================================
+   CHAT PANEL
+========================================================== */
+
+.chat-card {
+
+    background: var(--card-bg);
+
+    border-radius: var(--radius-lg);
+
+    padding: var(--space-5);
+
+    margin-bottom: var(--space-5);
+
+    box-shadow: var(--shadow-card);
+
+}
+
+/* ==========================================================
+   CHAT CONTAINER
+========================================================== */
+
+#chat-container {
+
+    height: 340px;
+
+    overflow-y: auto;
+
+    background: var(--bg-primary);
+
+    border-radius: var(--radius-md);
+
+    padding: var(--space-4);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-3);
+
+}
+
+/* ==========================================================
+   CHAT MESSAGE
+========================================================== */
+
+.chat-message {
+
+    line-height: 1.5;
+
+    word-break: break-word;
+
+    font-size: 15px;
+
+}
+
+/* ==========================================================
+   PLATFORM COLORS
+========================================================== */
+
+.chat-message.twitch {
+
+    color: var(--twitch);
+
+}
+
+.chat-message.youtube {
+
+    color: var(--youtube);
+
+}
+
+.chat-message.shorts {
+
+    color: var(--shorts);
+
+}
+
+/* ==========================================================
+   CHAT SCROLLBAR
+========================================================== */
+
+#chat-container::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+#chat-container::-webkit-scrollbar-thumb {
+
+    background: #4b5563;
+
+    border-radius: 999px;
+
+}
+
+/* ==========================================================
+   ALERTS PANEL
+========================================================== */
+
+.alerts-card {
+
+    background: var(--card-bg);
+
+    border-radius: var(--radius-lg);
+
+    padding: 18px;
+
+    margin-bottom: var(--space-5);
+
+    box-shadow: var(--shadow-card);
+
+}
+
+.alerts-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 16px;
+
+}
+
+.alert-count {
+
+    min-width: 36px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #7c3aed;
+
+    color: white;
+
+    font-weight: 700;
+
+    border-radius: 10px;
+
+    font-size: .9rem;
+
+}
+
+.alert-count.youtube {
+
+    background: #dc2626;
+
+}
+
+.alerts-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+.alert-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+.alert-icon {
+
+    width: 28px;
+
+    text-align: center;
+
+    font-size: 1.1rem;
+
+}
+
+.alert-text {
+
+    color: var(--text-primary);
+
+    font-size: .95rem;
+
+    line-height: 1.4;
+
+}
+
+.alert-text strong {
+
+    font-weight: 700;
+
+}
+
+.twitch-alerts .card-title {
+
+    color: #c084fc;
+
+}
+
+.youtube-alerts .card-title {
+
+    color: #ff4d4d;
+
+}
+
+/* ==========================================================
+   OBS PANEL
+========================================================== */
+
+.obs-card {
+
+    background: var(--card-bg);
+
+    border-radius: var(--radius-lg);
+
+    padding: 18px;
+
+    margin-bottom: var(--space-5);
+
+    box-shadow: var(--shadow-card);
+
+}
+
+.obs-header {
+
+    margin-bottom: 12px;
+
+}
+
+.obs-section {
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    padding: 6px 0;
+
+}
+
+.obs-section:first-of-type {
+
+    border-top: none;
+
+}
+
+.obs-section summary {
+
+    list-style: none;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    padding: 14px 0;
+
+    font-weight: 600;
+
+    color: var(--text-primary);
+
+}
+
+.obs-section summary::-webkit-details-marker {
+
+    display: none;
+
+}
+
+.obs-count {
+
+    color: var(--text-secondary);
+
+    font-size: .9rem;
+
+}
+
+.obs-content {
+
+    padding: 8px 0 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.obs-button {
+
+    background: #111827;
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    font-size: .95rem;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+.obs-button:hover {
+
+    background: #1f2937;
+
+}
+
+.obs-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #111827;
+
+    border-radius: 10px;
+
+    padding: 10px 14px;
+
+    color: white;
+
+}
+
+.obs-item button {
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 8px;
+
+    padding: 6px 12px;
+
+    cursor: pointer;
+
+}

@@ -1,9 +1,13 @@
-const express = require("express");
-const path = require("path");
-const http = require("http");
-const { Server } = require("socket.io");
+/*
+==========================================================
+Stream Companion Server
+==========================================================
+*/
 
-const initializeSocket = require("./sockets/socketManager");
+const express = require("express");
+const http = require("http");
+const path = require("path");
+const { Server } = require("socket.io");
 
 const app = express();
 
@@ -14,25 +18,41 @@ const io = new Server(server);
 const PORT = 3000;
 
 /*
-|--------------------------------------------------------------------------
-| Static Files
-|--------------------------------------------------------------------------
+==========================================================
+Serve Frontend
+==========================================================
 */
 
 app.use(express.static(path.join(__dirname, "../client")));
 
 /*
-|--------------------------------------------------------------------------
-| Socket Manager
-|--------------------------------------------------------------------------
+==========================================================
+Socket.IO
+==========================================================
 */
 
-initializeSocket(io);
+io.on("connection", (socket) => {
+
+    console.log("✅ Client Connected");
+
+    socket.emit("welcome", {
+
+        message: "Connected Successfully"
+
+    });
+
+    socket.on("disconnect", () => {
+
+        console.log("❌ Client Disconnected");
+
+    });
+
+});
 
 /*
-|--------------------------------------------------------------------------
-| Start Server
-|--------------------------------------------------------------------------
+==========================================================
+Start Server
+==========================================================
 */
 
 server.listen(PORT, () => {
