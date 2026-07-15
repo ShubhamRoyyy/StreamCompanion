@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Stream Companion</title>
 
     <link rel="stylesheet" href="/css/style.css">
@@ -11,51 +12,99 @@
 
 <body>
 
-    <main class="app">
+    <main class="container">
+
+        <!-- ================= HEADER ================= -->
 
         <header class="header">
 
             <h1>🎮 Stream Companion</h1>
 
-            <div class="status-row">
+            <div class="status-chips">
 
-                <div class="live">
-                    🔴 LIVE
+                <div id="twitch-status" class="chip offline">
+                    🟣 Twitch
                 </div>
 
-                <div id="status">
-                    Connecting...
+                <div id="youtube-status" class="chip offline">
+                    🔴 YouTube
+                </div>
+
+                <div id="connection-status" class="chip online">
+                    🟢 Connected
                 </div>
 
             </div>
 
         </header>
 
-        <section class="card">
+        <!-- ================= PLATFORM STATS ================= -->
 
-            <div class="card-title">
-                👥 Viewers
+        <section class="stats-row">
+
+            <div class="stat-card">
+
+                <div class="platform">🟣 TW</div>
+
+                <div class="count" id="tw-count">0</div>
+
             </div>
 
-            <div class="card-content">
+            <div class="stat-card">
 
-                <span class="big-number">--</span>
+                <div class="platform">🔴 YT</div>
 
-                <p>Total Viewers</p>
+                <div class="count" id="yt-count">0</div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="platform">📱 YS</div>
+
+                <div class="count" id="ys-count">0</div>
 
             </div>
 
         </section>
 
-        <section class="card">
+        <!-- ================= CHAT ================= -->
+
+        <section class="card chat-card">
 
             <div class="card-title">
                 💬 Live Chat
             </div>
 
-            <div class="card-content">
+            <div id="chat-box">
 
-                <p>Waiting for messages...</p>
+                <div class="chat-message twitch">
+                    🟣 Alex: Nice shot!
+                </div>
+
+                <div class="chat-message youtube">
+                    🔴 Rahul: GG!
+                </div>
+
+                <div class="chat-message shorts">
+                    📱 Emma: LOL 😂
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= ALERTS ================= -->
+
+        <section class="card">
+
+            <div class="card-title">
+                🟣 Twitch Alerts
+            </div>
+
+            <div class="alert-list">
+
+                Waiting for Twitch alerts...
 
             </div>
 
@@ -64,28 +113,54 @@
         <section class="card">
 
             <div class="card-title">
-                ❤️ Alerts
+                🔴 YouTube Alerts
             </div>
 
-            <div class="card-content">
+            <div class="alert-list">
 
-                <p>No alerts.</p>
+                Waiting for YouTube alerts...
 
             </div>
 
         </section>
 
+        <!-- ================= OBS ================= -->
+
         <section class="card">
 
             <div class="card-title">
-                🎬 OBS
+                🎬 OBS Controls
             </div>
 
-            <div class="card-content">
+            <details>
 
-                <p>Waiting for OBS...</p>
+                <summary>Scenes</summary>
 
-            </div>
+                <div class="obs-placeholder">
+                    Scene list will appear here
+                </div>
+
+            </details>
+
+            <details>
+
+                <summary>Sources</summary>
+
+                <div class="obs-placeholder">
+                    Sources will appear here
+                </div>
+
+            </details>
+
+            <details>
+
+                <summary>Audio</summary>
+
+                <div class="obs-placeholder">
+                    Mic & Desktop Audio controls
+                </div>
+
+            </details>
 
         </section>
 
@@ -93,7 +168,7 @@
 
     <script src="/socket.io/socket.io.js"></script>
 
-    <script src="/js/app.js"></script>
+    <script src="/js/main.js"></script>
 
 </body>
 
