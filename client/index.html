@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Stream Companion</title>
 
     <link rel="stylesheet" href="/css/style.css">
@@ -14,19 +13,17 @@
 
     <main class="app">
 
-        <!-- Header -->
         <header class="header">
 
             <h1>🎮 Stream Companion</h1>
 
-            <div class="status-container">
+            <div class="status-row">
 
-                <div class="live-status">
-                    <span class="live-dot"></span>
-                    LIVE
+                <div class="live">
+                    🔴 LIVE
                 </div>
 
-                <div id="status" class="connection-status">
+                <div id="status">
                     Connecting...
                 </div>
 
@@ -34,31 +31,29 @@
 
         </header>
 
-        <!-- Viewer Card -->
         <section class="card">
 
-            <div class="card-header">
-                <h2>👥 Viewers</h2>
+            <div class="card-title">
+                👥 Viewers
             </div>
 
-            <div class="card-body">
-
-                <p>Total Viewers</p>
+            <div class="card-content">
 
                 <span class="big-number">--</span>
+
+                <p>Total Viewers</p>
 
             </div>
 
         </section>
 
-        <!-- Chat Card -->
         <section class="card">
 
-            <div class="card-header">
-                <h2>💬 Live Chat</h2>
+            <div class="card-title">
+                💬 Live Chat
             </div>
 
-            <div class="card-body">
+            <div class="card-content">
 
                 <p>Waiting for messages...</p>
 
@@ -66,29 +61,27 @@
 
         </section>
 
-        <!-- Alerts -->
         <section class="card">
 
-            <div class="card-header">
-                <h2>❤️ Alerts</h2>
+            <div class="card-title">
+                ❤️ Alerts
             </div>
 
-            <div class="card-body">
+            <div class="card-content">
 
-                <p>No alerts yet.</p>
+                <p>No alerts.</p>
 
             </div>
 
         </section>
 
-        <!-- OBS -->
         <section class="card">
 
-            <div class="card-header">
-                <h2>🎬 OBS</h2>
+            <div class="card-title">
+                🎬 OBS
             </div>
 
-            <div class="card-body">
+            <div class="card-content">
 
                 <p>Waiting for OBS...</p>
 
@@ -99,6 +92,7 @@
     </main>
 
     <script src="/socket.io/socket.io.js"></script>
+
     <script src="/js/app.js"></script>
 
 </body>
