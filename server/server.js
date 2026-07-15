@@ -1,13 +1,26 @@
 const express = require("express");
+const path = require("path");
 
 const app = express();
 
 const PORT = 3000;
 
-app.get("/", (req, res) => {
-    res.send("🚀 Stream Companion Server is Running!");
-});
+/*
+|--------------------------------------------------------------------------
+| Static Files
+|--------------------------------------------------------------------------
+*/
+
+app.use(express.static(path.join(__dirname, "../client")));
+
+/*
+|--------------------------------------------------------------------------
+| Start Server
+|--------------------------------------------------------------------------
+*/
 
 app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+
+    console.log(`🚀 Server running at http://localhost:${PORT}`);
+
 });
