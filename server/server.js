@@ -3,6 +3,8 @@ const path = require("path");
 const http = require("http");
 const { Server } = require("socket.io");
 
+const initializeSocket = require("./sockets/socketManager");
+
 const app = express();
 
 const server = http.createServer(app);
@@ -13,7 +15,7 @@ const PORT = 3000;
 
 /*
 |--------------------------------------------------------------------------
-| Serve Static Frontend
+| Static Files
 |--------------------------------------------------------------------------
 */
 
@@ -21,23 +23,11 @@ app.use(express.static(path.join(__dirname, "../client")));
 
 /*
 |--------------------------------------------------------------------------
-| Socket.IO
+| Socket Manager
 |--------------------------------------------------------------------------
 */
 
-io.on("connection", (socket) => {
-
-    console.log("✅ Client Connected");
-
-    socket.emit("welcome", {
-
-        title: "Stream Companion",
-
-        message: "Welcome Shubham! 🎉"
-
-    });
-
-});
+initializeSocket(io);
 
 /*
 |--------------------------------------------------------------------------
