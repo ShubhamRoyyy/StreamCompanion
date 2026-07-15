@@ -3,172 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Stream Companion</title>
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
 </head>
 
 <body>
 
-    <main class="container">
+    <app-root></app-root>
 
-        <!-- ================= HEADER ================= -->
-
-        <header class="header">
-
-            <h1>🎮 Stream Companion</h1>
-
-            <div class="status-chips">
-
-                <div id="twitch-status" class="chip offline">
-                    🟣 Twitch
-                </div>
-
-                <div id="youtube-status" class="chip offline">
-                    🔴 YouTube
-                </div>
-
-                <div id="connection-status" class="chip online">
-                    🟢 Connected
-                </div>
-
-            </div>
-
-        </header>
-
-        <!-- ================= PLATFORM STATS ================= -->
-
-        <section class="stats-row">
-
-            <div class="stat-card">
-
-                <div class="platform">🟣 TW</div>
-
-                <div class="count" id="tw-count">0</div>
-
-            </div>
-
-            <div class="stat-card">
-
-                <div class="platform">🔴 YT</div>
-
-                <div class="count" id="yt-count">0</div>
-
-            </div>
-
-            <div class="stat-card">
-
-                <div class="platform">📱 YS</div>
-
-                <div class="count" id="ys-count">0</div>
-
-            </div>
-
-        </section>
-
-        <!-- ================= CHAT ================= -->
-
-        <section class="card chat-card">
-
-            <div class="card-title">
-                💬 Live Chat
-            </div>
-
-            <div id="chat-box">
-
-                <div class="chat-message twitch">
-                    🟣 Alex: Nice shot!
-                </div>
-
-                <div class="chat-message youtube">
-                    🔴 Rahul: GG!
-                </div>
-
-                <div class="chat-message shorts">
-                    📱 Emma: LOL 😂
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- ================= ALERTS ================= -->
-
-        <section class="card">
-
-            <div class="card-title">
-                🟣 Twitch Alerts
-            </div>
-
-            <div class="alert-list">
-
-                Waiting for Twitch alerts...
-
-            </div>
-
-        </section>
-
-        <section class="card">
-
-            <div class="card-title">
-                🔴 YouTube Alerts
-            </div>
-
-            <div class="alert-list">
-
-                Waiting for YouTube alerts...
-
-            </div>
-
-        </section>
-
-        <!-- ================= OBS ================= -->
-
-        <section class="card">
-
-            <div class="card-title">
-                🎬 OBS Controls
-            </div>
-
-            <details>
-
-                <summary>Scenes</summary>
-
-                <div class="obs-placeholder">
-                    Scene list will appear here
-                </div>
-
-            </details>
-
-            <details>
-
-                <summary>Sources</summary>
-
-                <div class="obs-placeholder">
-                    Sources will appear here
-                </div>
-
-            </details>
-
-            <details>
-
-                <summary>Audio</summary>
-
-                <div class="obs-placeholder">
-                    Mic & Desktop Audio controls
-                </div>
-
-            </details>
-
-        </section>
-
-    </main>
-
-    <script src="/socket.io/socket.io.js"></script>
-
-    <script src="/js/main.js"></script>
+    <script type="module" src="/js/main.js"></script>
 
 </body>
 
